@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 70" aria-labelledby="duolingo-logo-title">
+  <title id="duolingo-logo-title">Duolingo</title>
+  <g fill="none" stroke="#999" stroke-width="9">
+    <path d="M34 0v30a14.5 14.5 1 1 0-29 0 14.5 14.5 1 1 0 29 0zM70 12v21a11.5 11.5 0 0 1-23 0V12M111 30a14.5 14.5 0 1 0-29 0 14.5 14.5 0 0 0 29 0zM124 0v33a11 11 0 0 0 11 11h7M151 14v35"/>
+    <path d="M155.5 6a4.5 4.5 0 0 1-9 0 4.5 4.5 0 1 1 9 0z" fill="#999" stroke="none"/>
+    <path d="M188 49V27a11 11 0 1 0-22 0v22M229 30a14.5 14.5 0 0 1-29 0 14.5 14.5 0 1 1 29 0v20a14.5 14.5 0 0 1-25 11M270 30a14.5 14.5 0 1 0-29 0 14.5 14.5 0 0 0 29 0z"/>
+  </g>
+</svg>

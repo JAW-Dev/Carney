@@ -1,0 +1,45 @@
+<svg id="svg-objectives" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 278">
+  <defs>
+    <style>
+      .svg-objectives-cls-2 {
+        fill: #262626;
+      }
+
+      .svg-objectives-cls-3, .svg-objectives-cls-4 {
+        fill: none;
+      }
+
+      .svg-objectives-cls-2, .svg-objectives-cls-3, .svg-objectives-cls-4 {
+        stroke: #fff;
+      }
+
+      .svg-objectives-cls-2, .svg-objectives-cls-4 {
+        stroke-width: 15px;
+      }
+
+      .svg-objectives-cls-3, .svg-objectives-cls-4 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .svg-objectives-cls-3 {
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <title>Objectives</title>
+  <polyline id="svg-objectives_path" class="svg-objectives-cls-3" points="46.5,231 46.5,137.23 199.5,137.23 199.5,21.5"/>
+  <g id="svg-objectives_arrow">
+    <line class="svg-objectives-cls-3" x1="218.5" y1="44.17" x2="199.5" y2="21.5"/>
+    <line class="svg-objectives-cls-3" x1="199.5" y1="21.5" x2="182.5" y2="44.17"/>
+  </g>
+  <g id="svg-objectives_bottom-x">
+    <line class="svg-objectives-cls-4" x1="164.5" y1="195.5" x2="231.5" y2="266.5"/>
+    <line class="svg-objectives-cls-4" x1="231.5" y1="195.5" x2="164.5" y2="266.5"/>
+  </g>
+  <g id="svg-objectives_top-x">
+    <line class="svg-objectives-cls-4" x1="12.5" y1="7.5" x2="79.5" y2="78.5"/>
+    <line class="svg-objectives-cls-4" x1="79.5" y1="7.5" x2="12.5" y2="78.5"/>
+  </g>
+  <circle id="svg-objectives_circle" class="svg-objectives-cls-2" cx="47" cy="231" r="39.5"/>
+</svg>

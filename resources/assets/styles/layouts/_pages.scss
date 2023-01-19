@@ -1,0 +1,364 @@
+.page-header {
+  @extend .pt-lg;
+  @extend .pb-sm;
+
+  h1,
+  .h1 {
+    font-size: $h3-font-size;
+
+    @include media-breakpoint-up(md) {
+      font-size: $h2-font-size;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: $h1-font-size;
+    }
+  }
+}
+
+// sessions
+body.page.sessions,
+body.page.sessions-pittsburgh {
+  header {
+    .wp-block-carney-hero {
+      @include media-breakpoint-up(md) {
+        padding: 4rem 0;
+        height: auto;
+        min-height: 80vh;
+        max-height: 800px;
+
+        .wp-block-carney-hero__media-wrap {
+          & > img {
+            height: 100%;
+            min-height: 80vh;
+            max-height: 800px;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        min-height: 0;
+        height: 80vh;
+        max-height: 800px;
+
+        .wp-block-carney-hero__media-wrap {
+          & > img {
+            max-height: 800px;
+          }
+        }
+      }
+    }
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+  }
+
+  .display-3 {
+    @include media-breakpoint-down(md) {
+      font-size: $display4-size;
+    }
+  }
+
+  footer.page-footer {
+    display: none;
+  }
+
+  footer.sessions-footer {
+    font-size: 0.9rem;
+
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    svg {
+      width: 150px;
+      height: auto;
+    }
+  }
+}
+
+// prospect landing page
+body.page.art-van,
+body.page.argosy {
+  .wp-block-carney-section-nav {
+    font-size: 0.9rem;
+
+    & > ul.nav {
+      top: 4rem;
+    }
+  }
+
+  .wp-block-carney-capability-preview__content {
+    @include media-breakpoint-up(xl) {
+      width: 75%;
+      padding: 4rem 0 12rem 18rem;
+    }
+
+    @media (min-width: 1600px) {
+      width: 50%;
+      padding: 4rem 3rem 12rem 11rem;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+}
+
+// missfits of marketing
+
+body.page.missfits {
+  background-color: #fff;
+  font-family: $source-sans;
+
+  .font-serif {
+    font-family: $garamond;
+  }
+
+  .font-sans {
+    font-family: $source-sans;
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-family: $garamond;
+    font-weight: 700;
+  }
+
+  h2 {
+    color: $mint;
+  }
+
+  .missfits-hero {
+    .h3 {
+      line-height: 1;
+      margin-bottom: 0.75em;
+
+      em {
+        font-style: normal;
+        background-image: linear-gradient(transparent, transparent),
+          linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-repeat: no-repeat, no-repeat, repeat-x;
+        background-position: 0% 85%, 100% 85%, 0% 85%;
+      }
+
+      ~ .lead {
+        line-height: 1.25;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: $h5-font-size;
+      }
+    }
+
+    .missfits-hashtag {
+      position: absolute;
+      bottom: 11rem;
+
+      @include media-breakpoint-up(lg) {
+        bottom: 0;
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  .missfits-logo-wrap {
+    position: absolute;
+    top: -9.6vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    z-index: 2;
+    overflow: visible;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 15%;
+      width: 70%;
+      padding-top: 6.5%;
+      background-color: $mint;
+      z-index: -1;
+    }
+
+    svg {
+      transform: translateY(13%);
+    }
+
+    @include media-breakpoint-up(sm) {
+      top: -4rem;
+      width: 400px;
+    }
+  }
+
+  .missfits-logo__marketing {
+    display: none;
+  }
+
+  .missfits-hashtag {
+    position: relative;
+    z-index: 2;
+    line-height: 0.9;
+    display: inline-block;
+    padding: 0 0.65em;
+    font-size: 2em;
+
+    span {
+      position: relative;
+      bottom: 0.22em;
+    }
+  }
+
+  .missfits-ebook-cover-wrap {
+    position: relative;
+    margin-top: -14rem;
+    width: 111%;
+    margin-left: -5.75%;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 134%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+      max-height: calc(100vh - 390px);
+    }
+  }
+
+  .missfits-ebook-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .wp-block-carney-headshot-title {
+    h3 {
+      font-size: 1rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .btn {
+    font-family: $garamond;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+  }
+
+  .sign-up-form.sign-up-form--alt {
+    .sign-up-form__input {
+      background-color: rgba(0, 0, 0, 0.05);
+      border: 0;
+      color: $body-bg;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+
+      &::placeholder {
+        color: inherit;
+        opacity: 0.5;
+      }
+
+      &.fname {
+        @include media-breakpoint-up(sm) {
+          margin-right: 2px;
+        }
+      }
+
+      &.lname {
+        @include media-breakpoint-up(sm) {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .sign-up-form__result {
+      position: static;
+      background-color: #fff;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  .missfits-article-preview {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: -1.25rem;
+      right: 0.75rem;
+
+      @include media-breakpoint-up(xl) {
+        right: -0.25rem;
+      }
+    }
+  }
+
+  .missfits-article-preview__image {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .page-footer__social-list {
+    margin: 0 -0.5em;
+
+    li {
+      padding: 0 0.5em;
+    }
+
+    svg {
+      height: 1em;
+    }
+
+    a {
+      &:not(:hover):not(:focus):not(:active) {
+        svg {
+          path {
+            fill: lighten($body-bg, 30%);
+          }
+        }
+      }
+    }
+  }
+}

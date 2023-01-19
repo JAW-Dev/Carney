@@ -1,0 +1,2413 @@
+// section
+.wp-block-carney-section {
+  @include full-width;
+
+  position: relative;
+
+  & > h2 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    margin: 0;
+    overflow: visible;
+    font-size: $h3-font-size;
+    opacity: 0.2;
+    z-index: 3;
+    white-space: nowrap;
+    clear: both;
+    padding: 3rem 0;
+    width: 100%;
+    pointer-events: none;
+
+    & > span {
+      position: sticky;
+      top: 3rem;
+      float: left;
+      transform: translateX(-100%) rotate(-90deg);
+      transform-origin: 100% 0%;
+      max-height: 100vw;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        display: block;
+        padding-bottom: calc(100% - 1.2em);
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: $h1-font-size;
+
+      & > span {
+        transform: translateX(calc(-100% + 5rem)) rotate(-90deg);
+      }
+    }
+  }
+
+  &.wp-block-carney-section--horizontal-header {
+    @include media-breakpoint-down(md) {
+      & > h2 {
+        padding-left: $grid-padding;
+
+        & > span {
+          transform: none;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// section nav
+.wp-block-carney-section-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 10rem 0 3rem 0;
+  display: none;
+  pointer-events: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+
+  ul {
+    position: sticky;
+    top: 10rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    float: left;
+    transform: translateX(calc(-100% + 2rem)) rotate(-90deg);
+    transform-origin: 100% 0%;
+    white-space: nowrap;
+    margin-bottom: calc(100% - 1.5em);
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  li {
+    margin: 0 0.75rem;
+
+    &.active {
+      ~ li {
+        a {
+          &:focus,
+          &.active {
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    opacity: 0.2;
+    transition: opacity 0.25s;
+    text-decoration: none;
+    pointer-events: all;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      opacity: 0.8;
+    }
+  }
+}
+
+// client preview
+.wp-block-carney-client-preview {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  max-height: $preview-max-height;
+  transition: height 10000s steps(1);
+  clip-path: inset(0 0 0 0);
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    transition: none;
+  }
+}
+
+.wp-block-carney-client-preview__content,
+.wp-block-carney-client-preview__image {
+  height: 100vh;
+  max-height: $preview-max-height;
+  transition: max-height 1000s steps(1), height 10000s steps(1);
+
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+    transition: none;
+  }
+}
+
+.wp-block-carney-client-preview__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 4;
+  height: 100vh;
+  overflow: hidden;
+
+  & > * {
+    width: 100%;
+  }
+
+  .btn--mega {
+    width: auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 4rem 3rem 2rem 11rem;
+    height: auto;
+    overflow: visible;
+
+    & > .btn--mega {
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    & > .lead {
+      padding-left: 4rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    & > h3,
+    & > .wp-block-carney-client-preview__label {
+      @include sr-only;
+    }
+
+    .btn--mega {
+      order: -1;
+    }
+
+    .lead {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.wp-block-carney-client-preview__label {
+  order: -1;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: $info;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.wp-block-carney-client-preview__capabilities {
+  padding-left: 0;
+  list-style: none;
+  display: none;
+
+  li {
+    margin-right: 0.75rem;
+  }
+
+  svg {
+    height: 2rem;
+    width: auto;
+
+    * {
+      stroke: #fff;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    position: relative;
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width * 3;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-bottom: $grid-gutter-width * 2;
+    padding-left: 4rem;
+  }
+}
+
+.wp-block-carney-client-preview__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  object-fit: cover;
+  pointer-events: none;
+
+  img {
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: height 10000s steps(1);
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    width: 50%;
+    height: auto;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+.client-lead {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  @include media-breakpoint-up(md) {
+    font-size: 3rem;
+  }
+}
+
+// hero image
+.wp-block-carney-hero {
+  @include full-width;
+
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+  transition: min-height 10000s steps(1);
+
+  @include media-breakpoint-up(md) {
+    min-height: 0;
+    height: 100vh;
+    max-height: $hero-max-height;
+    transition: none;
+  }
+
+  .wp-block-carney-hero__media-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    transition: height 10000s steps(1), min-height 10000s steps(1);
+
+    & > img,
+    & > noscript > img {
+      object-fit: cover;
+      object-position: 65% top;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: auto; // stylelint-disable-line property-no-unknown
+    }
+
+    iframe,
+    embed,
+    object,
+    video {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+    }
+
+    @include media-breakpoint-up(md) {
+      min-height: 0;
+      height: 100%;
+      transition: none;
+
+      & > img,
+      & > noscript > img {
+        max-height: $hero-max-height;
+        transition: none;
+      }
+
+      iframe,
+      embed,
+      object,
+      video {
+        transition: none;
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+
+    p.h2 {
+      margin-bottom: 2rem;
+      font-size: 3em;
+
+      @include media-breakpoint-up(md) {
+        font-size: 4em;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 5em;
+      }
+    }
+
+    p.lead {
+      margin-bottom: 2rem;
+      font-size: 1.25em;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.75em;
+      }
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.wp-block-carney-hero--media-align-left {
+    .wp-block-carney-hero__media-wrap {
+      & > img,
+      & > noscript > img {
+        object-position: 0 50%;
+      }
+
+      iframe,
+      embed,
+      object,
+      video {
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--media-align-right {
+    .wp-block-carney-hero__media-wrap {
+      & > img,
+      & > noscript > img {
+        object-position: 60% 50%;
+
+        @include media-breakpoint-up(md) {
+          object-position: 100% 50%;
+        }
+      }
+
+      iframe,
+      embed,
+      object,
+      video {
+        left: 100%;
+        transform: translate(-75%, 0);
+
+        @include media-breakpoint-up(md) {
+          transform: translate(-100%, 0);
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--align-top {
+    justify-content: flex-start;
+    padding-bottom: 4rem;
+  }
+
+  &.wp-block-carney-hero--align-bottom {
+    justify-content: flex-end;
+    padding-bottom: 4rem;
+  }
+
+  &.wp-block-carney-hero--fixed {
+    .wp-block-carney-hero__media-wrap {
+      position: fixed;
+      height: auto;
+      min-height: 100vh;
+    }
+
+    &.wp-block-carney-hero--sm {
+      .wp-block-carney-hero__media-wrap {
+        min-height: 80vh;
+      }
+    }
+
+    &.wp-block-carney-hero--xs {
+      .wp-block-carney-hero__media-wrap {
+        min-height: 60vh;
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--fade {
+    .wp-block-carney-hero__media-wrap {
+      & > img,
+      & > noscript > img {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--fade-light {
+    .wp-block-carney-hero__media-wrap {
+      & > img,
+      & > noscript > img {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--sm {
+    min-height: 80vh;
+
+    @include media-breakpoint-up(md) {
+      min-height: 0;
+      height: 80vh;
+      max-height: 800px;
+
+      .wp-block-carney-hero__media-wrap {
+        & > img,
+        & > noscript > img {
+          max-height: 800px;
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--xs {
+    min-height: 60vh;
+
+    @include media-breakpoint-up(md) {
+      min-height: 0;
+      height: 60vh;
+      max-height: 600px;
+
+      .wp-block-carney-hero__media-wrap {
+        & > img,
+        & > noscript > img {
+          max-height: 600px;
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-hero--full {
+    @include media-breakpoint-up(md) {
+      min-height: 100vh;
+      height: auto;
+      max-height: none;
+    }
+
+    .wp-block-carney-hero__media-wrap {
+      & > img,
+      & > noscript > img {
+        @include media-breakpoint-up(md) {
+          max-height: none;
+        }
+      }
+    }
+  }
+
+  h1,
+  .h1 {
+    font-size: $h3-font-size;
+
+    @include media-breakpoint-up(md) {
+      font-size: $h2-font-size;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: $h1-font-size;
+    }
+  }
+
+  h3,
+  .h3 {
+    font-size: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  h4,
+  .h4 {
+    font-size: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
+  }
+
+  .wp-block-carney-hero__down-arrow {
+    position: fixed;
+    bottom: $grid-gutter-width;
+    left: calc(50% - #{$grid-padding});
+    width: $grid-gutter-width;
+    height: $grid-gutter-width;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: url("../images/svg/icon-chevron-down.svg");
+    background-position: 50% 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 4;
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.25s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 1;
+    }
+
+    @include media-breakpoint-up(md) {
+      bottom: 3 * $grid-padding;
+      left: calc(50% - (1.5 * #{$grid-padding}));
+      width: 3 * $grid-padding;
+      height: 3 * $grid-padding;
+
+      & + .container {
+        padding-top: $grid-gutter-width;
+        padding-bottom: $grid-gutter-width;
+      }
+    }
+  }
+
+  &.position-sticky {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// collage
+.wp-block-carney-collage {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &.wp-block-carney-collage--home {
+    .wp-block-carney-collage__text {
+      align-self: flex-start;
+      padding-bottom: 6rem;
+      position: relative;
+      z-index: 10;
+
+      & > * {
+        margin-left: 6rem;
+      }
+
+      & > .h2 {
+        margin-left: 0;
+        font-size: 3em;
+
+        @include media-breakpoint-up(md) {
+          font-size: 4em;
+        }
+
+        @include media-breakpoint-up(lg) {
+          font-size: 5em;
+        }
+      }
+
+      & > p.lead {
+        font-size: 1.25em;
+
+        @include media-breakpoint-up(md) {
+          font-size: 1.75em;
+        }
+      }
+    }
+
+    .wp-block-carney-collage__item {
+      padding: 0;
+
+      img {
+        position: relative;
+        max-width: 70vw;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+        left: 25vw;
+        transform: translate3d(-50%, 0, 0);
+        margin-bottom: 10vw;
+
+        @include media-breakpoint-up(lg) {
+          max-width: 50vw;
+          margin-bottom: 0;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        &:nth-child(even) {
+          img {
+            float: right;
+            left: auto;
+            right: 25vw;
+            transform: translate3d(50%, 0, 0);
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        &:nth-child(odd) {
+          img {
+            float: right;
+            left: auto;
+            right: 25vw;
+            transform: translate3d(50%, 0, 0);
+          }
+        }
+      }
+
+      // image 1
+      &:nth-child(2) {
+        z-index: 3;
+
+        @include media-breakpoint-up(lg) {
+          z-index: 6;
+
+          img {
+            max-width: 40vw;
+          }
+        }
+      }
+
+      // image 2
+      &:nth-child(3) {
+        z-index: 4;
+
+        img {
+          max-width: 80vw;
+        }
+
+        @include media-breakpoint-up(lg) {
+          z-index: 7;
+
+          img {
+            max-width: 60vw;
+          }
+        }
+      }
+
+      // image 3
+      &:nth-child(4) {
+        z-index: 5;
+
+        img {
+          max-width: 80vw;
+        }
+
+        @include media-breakpoint-up(lg) {
+          z-index: 4;
+
+          img {
+            right: 0;
+            max-width: 60vw;
+          }
+        }
+      }
+
+      // image 4
+      &:nth-child(5) {
+        z-index: 6;
+
+        img {
+          max-width: 50vw;
+        }
+
+        @include media-breakpoint-up(lg) {
+          z-index: 3;
+
+          img {
+            right: 0;
+            transform: none;
+            max-width: 33.333vw;
+          }
+        }
+      }
+
+      // image 5
+      &:nth-child(6) {
+        z-index: 7;
+
+        @include media-breakpoint-up(lg) {
+          z-index: 5;
+
+          img {
+            max-width: 33.333vw;
+          }
+        }
+      }
+
+      // image 6
+      &:nth-child(7) {
+        z-index: 2;
+
+        @include media-breakpoint-up(lg) {
+          img {
+            right: 20vw;
+            max-width: 45vw;
+          }
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-collage--client-dicks {
+    .wp-block-carney-collage__item {
+      margin-bottom: $grid-gutter-width;
+
+      img {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.wp-block-carney-collage__item--last {
+        @include media-breakpoint-up(md) {
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+
+          img {
+            width: 60vw;
+            top: 0;
+            right: $grid-padding;
+            max-width: none;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-collage--client-astrobotic {
+    .wp-block-carney-collage__col {
+      & > .row {
+        @include media-breakpoint-up(md) {
+          width: calc(100% + #{$grid-gutter-width});
+
+          .wp-block-carney-collage__item {
+            height: 33.333%;
+            position: relative;
+
+            img {
+              position: absolute;
+              top: map-get($spacers, 5);
+              height: calc(100% - #{2 * map-get($spacers, 5)});
+              width: 66.667%;
+              left: $grid-gutter-width;
+              object-fit: contain;
+            }
+
+            &:nth-child(2) {
+              img {
+                left: auto;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .video-wrap {
+      width: calc(100% + 5.25rem);
+      margin-left: -3rem;
+      margin-right: -2.25rem;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        margin: 0;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+      }
+
+      .video-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &.wp-block-carney-collage--client-wolfs {
+    overflow: visible;
+
+    .wp-block-carney-collage__item {
+      margin: 0 auto;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        position: relative;
+        box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
+
+        &:last-child {
+          position: absolute;
+          width: 39%;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: calc(50vw - #{$grid-gutter-width * 2});
+        max-width: 902px;
+        float: left;
+
+        img {
+          top: 25%;
+          transform: translateY(-25%);
+
+          &:last-child {
+            transform: translate(-50%, -25%);
+          }
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-collage--client-seneca-creek {
+    .wp-block-carney-collage__item {
+      &:not(:first-child) {
+        transform: translateY(calc(-66.667% - #{$grid-gutter-width}));
+
+        @include media-breakpoint-up(md) {
+          transform: translate(
+            $grid-gutter-width,
+            calc(-66.667% - #{$grid-gutter-width})
+          );
+        }
+      }
+
+      &:last-child {
+        @include media-breakpoint-up(md) {
+          position: relative;
+          left: $grid-padding;
+        }
+      }
+    }
+  }
+
+  &.wp-block-carney-collage--about-us {
+    overflow: visible;
+
+    .wp-block-carney-collage__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: $grid-gutter-width;
+
+      & + div {
+        padding: 0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 8vw;
+
+        & + div {
+          padding: 0 $grid-gutter-width;
+        }
+      }
+    }
+
+    .wp-block-carney-collage__item {
+      width: 80vw;
+      float: left;
+      position: relative;
+
+      img {
+        opacity: 1;
+      }
+
+      &:first-child {
+        opacity: 0.7;
+      }
+
+      &:last-child {
+        margin-top: -18vw;
+        width: 60vw;
+        float: right;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 50vw;
+        float: right;
+
+        &:last-child {
+          width: 30vw;
+          margin-top: -9vw;
+          right: -2.5 * $grid-gutter-width;
+        }
+      }
+    }
+  }
+}
+
+// post list
+.wp-block-carney-posts {
+  position: relative;
+  z-index: 4;
+  overflow-x: hidden;
+
+  &.wp-block-carney-posts--swipe {
+    & > .container {
+      position: relative;
+    }
+
+    .wp-block-carney-posts__list {
+      flex-wrap: nowrap;
+      margin-top: 0;
+      margin-left: -1rem;
+      margin-right: 0;
+
+      & > li {
+        flex-shrink: 0;
+        margin: 0;
+        padding: 0 $grid-padding;
+
+        @include media-breakpoint-up(md) {
+          margin: 0;
+        }
+      }
+    }
+
+    .wp-block-carney-posts__wrap {
+      user-select: none;
+      cursor: grab;
+      transition: transform 0.25s;
+      transform: translate3d(0, 0, 0);
+      will-change: transform, transition;
+
+      & > .container {
+        position: relative;
+      }
+    }
+  }
+}
+
+.wp-block-carney-posts__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  overflow: visible;
+  position: relative;
+  flex-wrap: wrap;
+  margin: -$grid-padding -$grid-padding 0 -$grid-padding;
+
+  @include media-breakpoint-up(md) {
+    margin-top: -$grid-gutter-width;
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+
+  & > li {
+    display: flex;
+    width: 100%;
+    margin: $grid-gutter-width 0;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 2rem;
+      width: 50%;
+      margin: ($grid-padding * 3) 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 33.333%;
+    }
+  }
+
+  article {
+    background-color: #fff;
+    border-radius: 2px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0.6rem 0.25rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem 1.5rem 0 1.5rem;
+
+      time,
+      .byline {
+        font-size: 0.7rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 2rem 3rem 0 3rem;
+      }
+    }
+
+    h2,
+    h3 {
+      width: 100%;
+      font-size: 1.25rem;
+      order: 9999;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    footer {
+      position: relative;
+      padding: 0 1.5rem 2rem 1.5rem;
+      margin-top: auto;
+
+      .btn {
+        z-index: 1;
+        position: absolute;
+        right: -1rem;
+        bottom: -1rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 0 3rem 2rem 3rem;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .wp-block-carney-posts__featured-image {
+        img {
+          filter: none;
+        }
+      }
+    }
+  }
+}
+
+.wp-block-carney-posts__list--past {
+  .past-item {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      width: 45%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 30%;
+    }
+  }
+}
+
+.wp-block-carney-posts__featured-image {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 66.667%;
+  }
+
+  img {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.5s;
+  }
+}
+
+.wp-block-carney-posts__excerpt {
+  padding: 0 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 3rem;
+  }
+}
+
+.wp-block-carney-posts__more {
+  align-self: center;
+  justify-content: center;
+}
+
+// brands
+
+.wp-block-carney-brands {
+  padding: 5rem 0 0 0;
+
+  h2 {
+    margin-bottom: $grid-padding;
+  }
+}
+
+.wp-block-carney-brands__logo {
+  max-width: 100%;
+
+  &.wp-block-carney-brands__logo--gray {
+    path {
+      fill: #999;
+    }
+  }
+}
+
+.wp-block-carney-brands__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem $grid-gutter-width;
+    width: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    @include media-breakpoint-up(sm) {
+      width: 33.333%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: auto;
+    }
+  }
+
+  img,
+  svg {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 100px;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 100%;
+      max-height: 66.667%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
+  }
+}
+
+// carnage CTA
+.wp-block-carney-carnage-cta {
+  @include btn-gradient($primary, $primary-gradient-end);
+
+  display: block;
+  text-decoration: none;
+  text-transform: none;
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: 1.5em;
+  font-style: italic;
+  padding: 3rem 0;
+  white-space: normal;
+
+  img,
+  svg {
+    margin-bottom: 1rem;
+    width: 405px;
+    max-width: 80%;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// client meta
+
+.wp-block-carney-client-meta {
+  position: relative;
+  z-index: 5;
+
+  @include media-breakpoint-down(md) {
+    padding: 3rem 0;
+  }
+
+  h3 {
+    font-size: 1.2 * $font-size-base;
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+  }
+
+  .wp-block-carney-client-meta__industry-col,
+  .wp-block-carney-client-meta__capabilities-col {
+    margin: 1rem 0;
+
+    @include media-breakpoint-up(md) {
+      margin: 5rem 0;
+    }
+  }
+
+  li {
+    font-style: italic;
+  }
+}
+
+// split
+
+.wp-block-carney-split {
+  overflow: hidden;
+
+  &.wp-block-carney-split--image-left {
+    @include media-breakpoint-up(lg) {
+      .wp-block-carney-split__image-wrap {
+        left: auto;
+        right: $grid-gutter-width;
+      }
+
+      .wp-block-carney-split__image-col {
+        order: -1;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .wp-block-carney-split__image-col,
+  .wp-block-carney-split__text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wp-block-carney-split__image-col {
+    padding: 0;
+
+    img:first-of-type {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include media-breakpoint-up(lg) {
+      overflow: visible;
+
+      img:first-of-type {
+        width: auto;
+        min-width: 50vw;
+      }
+    }
+  }
+
+  .wp-block-carney-split__image-wrap {
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      left: $grid-gutter-width;
+      min-width: 50vw;
+
+      &.wp-block-carney-split__image-wrap--landscape {
+        min-width: 60vw;
+      }
+    }
+  }
+
+  .wp-block-carney-split__image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: $grid-padding $grid-gutter-width;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+
+    // special handling for CMOA color pallete
+    &.wp-block-carney-split__image-caption--cmoa-colors {
+      position: relative;
+      padding: $grid-padding 0 0 0;
+      background-color: transparent;
+      line-height: 1.25rem;
+
+      .cmoa-colors {
+        display: flex;
+        justify-content: center;
+      }
+
+      .cmoa-colors__color {
+        flex-grow: 1;
+      }
+
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        padding: $grid-padding $grid-gutter-width;
+
+        .cmoa-colors {
+          margin-bottom: -$grid-gutter-width;
+          justify-content: flex-start;
+        }
+
+        .cmoa-colors__color {
+          flex-grow: 0;
+        }
+      }
+    }
+  }
+
+  h3,
+  .h3 {
+    font-size: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  h4,
+  .h4 {
+    font-size: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.wp-block-carney-indent {
+  h3,
+  .h3 {
+    font-size: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  h4,
+  .h4 {
+    font-size: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
+  }
+}
+
+// related clients
+.wp-block-carney-related-clients {
+  overflow-x: hidden;
+
+  & > .container {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 100%;
+      width: 100vw;
+      top: 0;
+      bottom: -1rem;
+      background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba($body-bg, 0.3) 2rem
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+  }
+}
+
+.wp-block-carney-related-clients__wrap {
+  user-select: none;
+  cursor: grab;
+  transition: transform 0.25s;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, transition;
+}
+
+.wp-block-carney-related-clients__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  overflow: visible;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: 0;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+
+  & > li {
+    padding: 0 1rem;
+    flex-shrink: 0;
+    display: flex;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 2rem;
+      width: 50%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 33.333%;
+    }
+  }
+}
+
+// post preview
+
+.wp-block-carney-post-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  @include full-width;
+
+  & > .container {
+    display: flex;
+    z-index: 2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 100vh;
+    max-height: 800px;
+  }
+}
+
+.wp-block-carney-post-preview__content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  h2,
+  h3 {
+    a {
+      color: #fff;
+    }
+  }
+
+  h3,
+  .h3 {
+    font-size: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  h4,
+  .h4 {
+    font-size: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
+  }
+
+  .entry-meta {
+    font-size: 0.9em;
+    margin-bottom: $grid-gutter-width;
+    color: $gray-500;
+  }
+
+  .entry-summary {
+    max-width: 30rem;
+  }
+}
+
+.wp-block-carney-post-preview__image-container {
+  display: flex;
+  padding: 0;
+
+  & > .row {
+    width: 100%;
+    margin: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.wp-block-carney-post-preview__image-col {
+  position: relative;
+  overflow: visible;
+
+  img,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .ie-gif {
+    display: none;
+  }
+
+  @supports (-ms-ime-align: auto) {
+    .ie-gif {
+      display: block;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .ie-gif {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 0;
+    margin-bottom: $grid-gutter-width;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 66.667%;
+    }
+  }
+}
+
+// category nav
+
+.wp-block-carney-category-nav {
+  ul.nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75em;
+
+    li {
+      margin-right: $grid-gutter-width;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.active {
+        a {
+          color: #fff;
+
+          &::after {
+            width: auto;
+            right: -1rem;
+            border-color: #fff;
+          }
+        }
+      }
+    }
+
+    a {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $gray-600;
+      display: block;
+      text-decoration: none;
+      transition: color 0.25s;
+
+      &::after {
+        width: auto;
+        right: -1rem;
+        border-color: $gray-600;
+        transition: border-color 0.25s;
+      }
+
+      svg {
+        display: none;
+        width: auto;
+        height: 1.1em;
+        margin-left: 0.25em;
+        vertical-align: text-top;
+        image-rendering: pixelated;
+
+        * {
+          stroke: #fff;
+        }
+
+        @include media-breakpoint-up(lg) {
+          display: inline-block;
+        }
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $gray-400;
+
+        &::after {
+          border-color: $gray-400;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1em;
+    }
+  }
+
+  .bg-white & {
+    ul.nav {
+      li {
+        &.active {
+          a {
+            color: $dark;
+
+            &::after {
+              border-color: $dark;
+            }
+          }
+        }
+      }
+
+      a {
+        color: $gray-500;
+
+        &::after {
+          border-color: $gray-500;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $dark;
+
+          &::after {
+            border-color: $dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+// carnage header
+
+.wp-block-carney-carnage-header__phone-image {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    position: absolute;
+    top: -$grid-padding;
+    height: calc(100% + #{$grid-gutter-width});
+    left: 0;
+    width: calc(100% + #{$grid-gutter-width});
+    max-width: none;
+    object-fit: contain;
+    object-position: 25% 50%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    left: -$grid-padding;
+    object-position: 50% 50%;
+  }
+}
+
+// fader
+.wp-block-carney-fader {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  position: relative;
+
+  &:not(.active) {
+    .wp-block-carney-fader__item {
+      &.active {
+        position: relative;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.wp-block-carney-fader__item {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 1s;
+  width: 100%;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+// image comparison
+.wp-block-carney-image-comparison__inner {
+  max-height: 80vh;
+  overflow: hidden;
+  transition: max-height 10000s steps(1);
+  max-width: 100%;
+
+  &.wp-block-carney-image-comparison__inner--full-height {
+    max-height: none;
+
+    .comparison-item {
+      max-height: none;
+
+      .comparison-item__content {
+        max-height: none;
+      }
+    }
+  }
+
+  .comparison-item {
+    background-color: transparent;
+    min-width: 2rem;
+    max-width: calc(100% - 2rem);
+    max-height: 60vh;
+    transition: max-height 10000s steps(1);
+
+    &:not(.comparison-item--first) {
+      & > .comparison-item__content {
+        & > .comparison-item__image {
+          padding-right: 0;
+        }
+      }
+    }
+
+    & > .comparison-item__content {
+      max-width: 100%;
+      max-height: 60vh;
+      transition: max-height 10000s steps(1);
+
+      .shadowed &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        height: 10%;
+        min-height: 200px;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          $body-bg 90%
+        );
+      }
+
+      & > .comparison-item__image {
+        width: 100%;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin-top: 3rem;
+        padding: 0 2rem;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      max-height: 80vh;
+
+      & > .comparison-item__content {
+        max-height: 80vh;
+      }
+    }
+  }
+
+  .comparison-separator {
+    top: 35px;
+    height: calc(100% - 45px);
+    opacity: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -7px;
+      right: -7px;
+      top: -10px;
+      bottom: -10px;
+      border: 7px solid transparent;
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    &::before {
+      content: "DRAG";
+      display: block;
+      position: absolute;
+      top: -27px;
+      left: -20px;
+      right: -20px;
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
+    .comparison-control {
+      opacity: 1;
+      background-color: transparent;
+
+      .comparison-control__mask {
+        background-color: transparent;
+        background-image: url("../images/svg/icon-drag.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        opacity: 1;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    transition: none;
+    max-width: 80%;
+  }
+}
+
+// charts
+.wp-block-carney-charts__heading {
+  font-size: 1.25em !important;
+
+  & > div {
+    transition: opacity 0.5s;
+    opacity: 0;
+
+    + div {
+      margin-top: -1.2em;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2em !important;
+  }
+}
+
+// donut chart
+// from: https://medium.com/@heyoka/scratch-made-svg-donut-pie-charts-in-html5-2c587e935d72
+
+.wp-block-carney-donut {
+  height: auto;
+
+  circle {
+    // https://easings.net/#easeInOutCubic
+    transition: stroke-dasharray 2s cubic-bezier(0.645, 0.045, 0.355, 1),
+      stroke 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &.wp-block-carney-donut--no-transition {
+    circle {
+      transition: none;
+    }
+  }
+}
+
+.wp-block-carney-donut__text {
+  fill: #fff;
+  -moz-transform: translateY(0.25em);
+  -ms-transform: translateY(0.25em);
+  -webkit-transform: translateY(0.25em);
+  transform: translateY(0.25em);
+}
+
+.wp-block-carney-donut__value {
+  font-size: 0.8em;
+  line-height: 1;
+  text-anchor: middle;
+  transform: translateY(-0.1em);
+  font-family: $font-family-serif;
+}
+
+.wp-block-carney-donut__value__suffix {
+  font-size: 0.6em;
+}
+
+.wp-block-carney-donut__label {
+  font-size: 0.16em;
+  text-anchor: middle;
+  transform: translateY(0.4em);
+}
+
+// calendar
+
+.wp-block-carney-calendar {
+  padding-top: $h4-font-size * 1.2;
+  position: relative;
+
+  &.wp-block-carney-calendar--no-transition {
+    .wp-block-carney-calendar__day {
+      transition: none;
+
+      & > span {
+        transition: none;
+      }
+
+      & > .wp-block-carney-calendar__line {
+        transition: none;
+
+        &::after {
+          transition: none;
+        }
+      }
+    }
+  }
+}
+
+.wp-block-carney-calendar__header {
+  position: absolute;
+  top: 0;
+  right: 0%;
+  width: 100%;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: $h4-font-size;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #3a3a3a;
+}
+
+.wp-block-carney-calendar__week {
+  display: flex;
+
+  & + .wp-block-carney-calendar__week {
+    margin-top: -2px;
+  }
+}
+
+.wp-block-carney-calendar__day {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #757575;
+  transition: border-color 0.25s, background-color 0.25s;
+
+  & > span {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+    transition: color 0.25s;
+    color: #757575;
+
+    @include media-breakpoint-up(sm) {
+      top: 0.75rem;
+      left: 0.75rem;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &.is-active {
+    border-color: transparent;
+    background-color: #0d87d5;
+    z-index: 2;
+
+    & > span {
+      color: white;
+    }
+  }
+
+  &.wp-block-carney-calendar__day--prev-month {
+    border-color: #474747;
+
+    &.is-active {
+      border-color: transparent;
+      background-color: #70c1f4;
+
+      & > span {
+        color: $body-bg;
+      }
+    }
+  }
+
+  & + .wp-block-carney-calendar__day {
+    margin-left: -2px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.wp-block-carney-calendar__line {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: #0d87d5;
+  position: absolute;
+  opacity: 0;
+
+  .wp-block-carney-calendar__day--prev-month & {
+    border-color: #70c1f4;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #0d87d5;
+    opacity: 0;
+
+    .wp-block-carney-calendar__day--prev-month & {
+      background-color: #70c1f4;
+    }
+  }
+
+  $transition-duration: 2s;
+
+  &.wp-block-carney-calendar__line--up {
+    $horizontal-distance: 1.5;
+    $vertical-distance: 1;
+    $total-distance: $horizontal-distance + $vertical-distance;
+
+    $horizontal-duration: ($horizontal-distance / $total-distance) *
+      $transition-duration;
+    $vertical-duration: ($vertical-distance / $total-distance) *
+      $transition-duration;
+
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    transition: width $horizontal-duration 0s,
+      height $vertical-duration $horizontal-duration, opacity 0.25s;
+    bottom: 50%;
+    right: 100%;
+    margin-bottom: -1px;
+    margin-right: -2px;
+
+    .wp-block-carney-calendar__day.is-active & {
+      width: $horizontal-distance * 100%;
+      height: $vertical-distance * 100%;
+      opacity: 1;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      bottom: 100%;
+      right: 100%;
+      margin-bottom: -5px;
+      margin-right: -5px;
+      transition: opacity 0.5s $transition-duration;
+    }
+  }
+
+  &.wp-block-carney-calendar__line--down {
+    $horizontal-distance: 0.5;
+    $vertical-distance: 1.5;
+    $total-distance: $horizontal-distance + $vertical-distance;
+
+    $horizontal-duration: ($horizontal-distance / $total-distance) *
+      $transition-duration;
+    $vertical-duration: ($vertical-distance / $total-distance) *
+      $transition-duration;
+
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-top-width: 2px;
+    border-top-style: solid;
+    transition: width $horizontal-duration 0s,
+      height $vertical-duration $horizontal-duration, opacity 0.25s;
+    top: 50%;
+    left: 100%;
+    margin-top: -1px;
+    margin-left: -2px;
+
+    .wp-block-carney-calendar__day.is-active & {
+      width: $horizontal-distance * 100%;
+      height: $vertical-distance * 100%;
+      opacity: 1;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      top: 100%;
+      left: 100%;
+      margin-top: -5px;
+      margin-left: -5px;
+      transition: opacity 0.5s $transition-duration;
+    }
+  }
+}
+
+// carney CTA
+
+.wp-block-carney-cta {
+  @include media-breakpoint-down(sm) {
+    h2.h4 {
+      font-size: $h4-font-size;
+    }
+
+    .btn {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    h2.h4 {
+      font-size: $h5-font-size;
+    }
+  }
+}
+
+// steps
+
+.wp-block-carney-steps__step-image-col,
+.wp-block-carney-steps__step-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wp-block-carney-steps__step-title {
+  & > small {
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+// side-by-side
+
+.wp-block-carney-side-by-side__col {
+  position: relative;
+  display: flex;
+
+  &:first-child {
+    justify-content: flex-start;
+
+    .wp-block-carney-side-by-side__bg {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+    width: 50vw;
+  }
+}
+
+.wp-block-carney-side-by-side__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  @include media-breakpoint-up(lg) {
+    width: 50vw;
+  }
+}
+
+// Title with headshot (for blog)
+
+.wp-block-carney-headshot-title {
+  display: flex;
+  align-items: center;
+  margin-top: $grid-padding * 3;
+  margin-bottom: $grid-gutter-width;
+
+  & > p:first-child {
+    margin-bottom: 0 !important;
+  }
+
+  & > img,
+  & > p:first-child > img {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: $grid-gutter-width;
+    margin-bottom: 0;
+  }
+
+  > {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+
+      & > small {
+        margin-top: $grid-padding / 2;
+        font-size: 80% !important;
+
+        @include media-breakpoint-up(md) {
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}
+
+.wp-block-carney-disolve {
+  display: grid;
+  justify-content: center;
+
+  img {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    transition: opacity 0.5s ease;
+
+    &.dissolved {
+      opacity: 0;
+    }
+  }
+}
+
+// Job Listings
+.job-openings {
+  th.job-company {
+    width: 35%;
+
+    @include media-breakpoint-down(xs) {
+      width: 40%;
+      text-align: right;
+    }
+  }
+
+  td.job-company {
+    @include media-breakpoint-down(xs) {
+      text-align: right;
+    }
+  }
+
+  th.job-location {
+    width: 25%;
+    text-align: right;
+  }
+
+  td.job-location {
+    text-align: right;
+  }
+}
+
+tr.job {
+  &:target {
+    & + tr.job-details {
+      display: table-row;
+    }
+  }
+}
+
+tr.job-details {
+  display: none;
+
+  &.is-active {
+    display: table-row;
+  }
+
+  td {
+    border-top-color: #efefef;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}

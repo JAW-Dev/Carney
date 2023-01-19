@@ -1,0 +1,139 @@
+{
+  "name": "sage",
+  "version": "9.0.0",
+  "author": "Roots <team@roots.io>",
+  "homepage": "https://roots.io/sage/",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roots/sage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roots/sage/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "browserslist": [
+    "last 2 versions",
+    "android 4",
+    "opera 12"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ],
+    "rules": {
+      "indentation": 2,
+      "string-quotes": "double",
+      "no-empty-source": null,
+      "no-descending-specificity": null,
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "extend",
+            "at-root",
+            "debug",
+            "warn",
+            "error",
+            "if",
+            "else",
+            "for",
+            "each",
+            "while",
+            "mixin",
+            "include"
+          ]
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "webpack --progress --config resources/assets/build/webpack.config.js",
+    "build:production": "webpack --progress -p --config resources/assets/build/webpack.config.js",
+    "build:profile": "webpack --progress --profile --json --config resources/assets/build/webpack.config.js",
+    "start": "webpack --hide-modules --watch --config resources/assets/build/webpack.config.js",
+    "rmdist": "rimraf dist",
+    "lint": "npm run -s lint:scripts && npm run -s lint:styles",
+    "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
+    "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
+    "test": "npm run -s lint",
+    "deploy:staging": "rsync -azvh --progress --exclude '.env' --exclude '.git' --exclude 'node_modules' --exclude 'assets' --exclude '.cache-loader' . deploy@biggie:/var/www/vhosts/carney-staging/site/wp-content/themes/carney-2018 --delete-after",
+    "deploy:production": "rsync -azvh --progress --exclude '.env' --exclude '.git' --exclude 'node_modules' --exclude 'assets' --exclude '.cache-loader' . deploy@biggie:/var/www/vhosts/carney-beta/site/wp-content/themes/carney-2018 --delete-after"
+  },
+  "engines": {
+    "node": ">= 6.9.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "~7.2.5",
+    "babel-eslint": "^8.2.1",
+    "browser-sync": "~2.23.6",
+    "browsersync-webpack-plugin": "^0.6.0",
+    "bs-html-injector": "~3.0",
+    "buble-loader": "^0.4.1",
+    "cache-loader": "~1.2.0",
+    "clean-webpack-plugin": "^0.1.18",
+    "copy-globs-webpack-plugin": "^0.2.0",
+    "css-loader": "^0.28.9",
+    "cssnano": "~v4.0.0-rc.2",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-loader": "~1.9",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "~3.0.2",
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "imagemin-mozjpeg": "~7.0.0",
+    "imagemin-webpack-plugin": "~2.0.0",
+    "import-glob": "~1.5",
+    "imports-loader": "^0.8.0",
+    "node-sass": "^8.0.0",
+    "postcss-loader": "~2.1.0",
+    "postcss-safe-parser": "~3.0",
+    "prettier-eslint": "^8.8.1",
+    "resolve-url-loader": "~2.2.1",
+    "rimraf": "~2.6",
+    "sass": "^1.35.1",
+    "sass-loader": "~6.0",
+    "style-loader": "^0.20.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-prettier": "^3.2.0",
+    "stylelint-config-standard": "~18.0.0",
+    "stylelint-webpack-plugin": "^0.10.1",
+    "url-loader": "^0.6.2",
+    "webpack": "~3.10.0",
+    "webpack-assets-manifest": "^1.0.0",
+    "webpack-dev-middleware": "~2.0.4",
+    "webpack-hot-middleware": "~2.21.0",
+    "webpack-merge": "~4.1.1",
+    "yargs": "~11.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.0",
+    "copy-to-clipboard": "^3.1.0",
+    "form-serialize": "^0.7.2",
+    "gsap": "^2.0.1",
+    "headroom.js": "^0.9.4",
+    "image-comparison": "^2.0.4",
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.3.1",
+    "jquery-bridget": "^2.0.1",
+    "masonry-layout": "^4.2.1",
+    "popper.js": "^1.12.9",
+    "promise-polyfill": "8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-select2-wrapper": "^1.0.4-beta6",
+    "scrollmagic": "^2.0.5",
+    "select2": "^4.0.13",
+    "whatwg-fetch": "^3.0.0"
+  }
+}

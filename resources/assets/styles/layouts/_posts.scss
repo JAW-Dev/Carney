@@ -1,0 +1,224 @@
+body.single {
+  main.main {
+    & > article {
+      .entry-title {
+        font-size: $h4-font-size;
+
+        @include media-breakpoint-up(md) {
+          font-size: $h3-font-size;
+        }
+      }
+
+      .post-excerpt {
+        @extend .mt-5;
+
+        *:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .post-labels {
+        border-top: 1px solid $gray-500;
+
+        &:empty {
+          padding-top: 0 !important;
+        }
+      }
+
+      .entry-content {
+        p,
+        ul,
+        ol,
+        dl {
+          margin-bottom: 1.5rem;
+        }
+
+        h2,
+        .h2 {
+          font-size: $h5-font-size;
+          margin-top: 4rem;
+          margin-bottom: 2rem;
+        }
+
+        h3,
+        .h3 {
+          font-size: $h6-font-size;
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+        }
+
+        h4,
+        .h4 {
+          font-size: $font-size-base;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        h5,
+        h5,
+        h6,
+        .h6 {
+          font-size: $font-size-base;
+        }
+
+        @include media-breakpoint-up(md) {
+          font-size: 1.1rem;
+
+          h2,
+          .h2 {
+            font-size: $h4-font-size;
+          }
+
+          h3,
+          .h3 {
+            font-size: $h5-font-size;
+          }
+
+          h4,
+          .h4 {
+            font-size: $h6-font-size;
+          }
+
+          h5,
+          h5,
+          h6,
+          .h6 {
+            font-size: $font-size-base;
+          }
+        }
+      }
+
+      // inline share controls
+      [data-sumome-share-id] {
+        position: sticky;
+        bottom: 0;
+        z-index: 9;
+        display: block;
+        pointer-events: none;
+
+        .sumome-share-client {
+          width: 100%;
+          display: flex;
+          justify-content: stretch;
+          align-items: stretch;
+        }
+
+        .sumome-share-client-share {
+          width: 100%;
+          pointer-events: all;
+
+          &.sumome-share-client-share-share {
+            cursor: default;
+            background-color: rgba(255, 255, 255, 0.75) !important;
+
+            @include media-breakpoint-down(sm) {
+              padding-left: 10px;
+              padding-right: 10px;
+              background-color: #efefef !important;
+            }
+          }
+        }
+
+        @include media-breakpoint-up(md) {
+          .sumome-share-client {
+            width: 50px;
+            display: block;
+          }
+        }
+      }
+    }
+
+    // carnage issues and features
+
+    .post-sponsor {
+      text-align: center;
+
+      img {
+        width: auto;
+        height: auto;
+        max-width: 15rem;
+        max-height: 11.25rem;
+      }
+    }
+
+    .rss-box,
+    .rss-quote,
+    .rss-ad {
+      .post-label {
+        margin-bottom: $grid-gutter-width;
+
+        & + h2 {
+          margin-top: $grid-padding;
+        }
+      }
+
+      & > img {
+        border: 1px solid $gray-200;
+
+        & ~ .post-label {
+          margin-top: $grid-padding;
+        }
+
+        @include media-breakpoint-up(md) {
+          &:first-child {
+            margin-left: -$grid-gutter-width;
+            margin-right: -$grid-gutter-width;
+            max-width: none;
+            display: block;
+            width: calc(100% + 2 * #{$grid-gutter-width});
+          }
+        }
+      }
+
+      & > p,
+      & > .btn {
+        &:last-child {
+          margin-top: $grid-gutter-width;
+          margin-bottom: 0;
+        }
+      }
+
+      & + .rss-box,
+      & + .rss-quote,
+      & + .rss-ad {
+        margin-top: 3 * $grid-gutter-width;
+      }
+    }
+
+    .rss-quote {
+      text-align: center;
+      border-top: 1px solid $gray-500;
+      border-bottom: 1px solid $gray-500;
+      padding: (2 * $grid-gutter-width) 0;
+
+      .post-label {
+        margin-top: 0;
+        margin-bottom: $grid-gutter-width;
+
+        & ~ p:not(.cta-links) {
+          padding-left: $grid-gutter-width;
+          padding-right: $grid-gutter-width;
+          font-size: $lead-font-size;
+        }
+      }
+    }
+
+    .rss-ad {
+      text-align: center;
+
+      h2 + img {
+        @include media-breakpoint-up(md) {
+          margin-left: -$grid-gutter-width;
+          margin-right: -$grid-gutter-width;
+          max-width: none;
+          display: block;
+          width: calc(100% + 2 * #{$grid-gutter-width});
+        }
+      }
+
+      .post-label {
+        margin-top: $grid-gutter-width;
+      }
+    }
+  }
+}

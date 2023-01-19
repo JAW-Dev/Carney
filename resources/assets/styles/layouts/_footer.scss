@@ -1,0 +1,104 @@
+.page-footer {
+  background-color: $body-bg;
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0 2rem 0;
+  font-size: 90%;
+  @include full-width;
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.page-footer__address-col,
+.page-footer__copyright-col,
+.page-footer__social-col {
+  margin: 0 0 3rem 0;
+}
+
+.page-footer__social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    padding: 0 $grid-padding;
+  }
+
+  img,
+  svg {
+    height: $grid-padding * 1.5;
+    width: auto;
+  }
+
+  svg {
+    path {
+      transition: fill 0.25s;
+    }
+  }
+}
+
+.page-footer__social-list__twitter {
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        path {
+          fill: lighten(#1da1f2, 10%);
+        }
+      }
+    }
+  }
+}
+
+.page-footer__social-list__facebook {
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        path {
+          fill: lighten(#3b5998, 10%);
+        }
+      }
+    }
+  }
+}
+
+.page-footer__social-list__linkedin {
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        path {
+          fill: lighten(#0077b5, 10%);
+        }
+      }
+    }
+  }
+}
+
+.page-footer__social-list__instagram {
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        path {
+          fill: lighten(#c13584, 10%);
+        }
+      }
+    }
+  }
+}

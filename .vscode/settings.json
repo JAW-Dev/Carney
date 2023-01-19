@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "eslint.enable": true
+}

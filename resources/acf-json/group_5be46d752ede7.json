@@ -1,0 +1,105 @@
+{
+    "key": "group_5be46d752ede7",
+    "title": "Carnage User",
+    "fields": [
+        {
+            "key": "field_5be46d7a5f01f",
+            "label": "Subscription Status",
+            "name": "subscription_status",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "subscribed": "Subscribed",
+                "unsubscribed": "Unsubscribed",
+                "cleaned": "Cleaned"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5beaf5c47b044",
+            "label": "Referral ID",
+            "name": "referral_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5be470bbcf97d",
+            "label": "Referred By",
+            "name": "referred_by",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object"
+        },
+        {
+            "key": "field_5be471a0cf97e",
+            "label": "Referrals",
+            "name": "referrals",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 1,
+            "multiple": 1,
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "carnage_user"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1542218781
+}

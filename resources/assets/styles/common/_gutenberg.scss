@@ -1,0 +1,76 @@
+html.editor-styles-wrapper {
+  background-color: transparent !important;
+
+  * {
+    box-sizing: inherit;
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  // ACF
+
+  a.acf-icon {
+    color: #999;
+    border-color: #bbb;
+    background-color: #fff;
+
+    &.small {
+      font-size: 14px;
+    }
+
+    &:hover {
+      border-color: transparent;
+      background: #2a9bd9;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .acf-block-fields {
+    box-sizing: content-box;
+  }
+
+  // WP / TinyMCE
+
+  .alignfull,
+  .alignwide {
+    width: 100%;
+  }
+
+  .wp-switch-editor {
+    box-sizing: content-box;
+    font-size: 13px;
+    line-height: 19px;
+    margin: 5px 0 0 5px;
+  }
+
+  .button,
+  .button-primary,
+  .button-secondary {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .block-editor-block-list__layout {
+    &.is-root-container {
+      background-color: $body-bg;
+    }
+  }
+
+  // Block-specific styles
+
+  .wp-block-carney-section {
+    width: 100%;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    transform: none;
+  }
+}

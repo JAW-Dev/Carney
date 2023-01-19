@@ -1,0 +1,419 @@
+{
+    "key": "group_5a661aac5549c",
+    "title": "Carnage Issue",
+    "fields": [
+        {
+            "key": "field_5e8cb8112be91",
+            "label": "Sponsor",
+            "name": "sponsor",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "carnage_sponsor",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_5e8cba0c2be92",
+            "label": "Sponsor landing page",
+            "name": "sponsor_landing_page",
+            "type": "url",
+            "instructions": "Defaults to Sponsor website URL if blank.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e8cb8112be91",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a661b3eb098b",
+            "label": "Features",
+            "name": "features",
+            "type": "flexible_content",
+            "instructions": "Most content (Listen, Read, Watch, Quote, Ads from the Past) should be set up in a Carnage Feature post, and included in the issue using the \"Feature Post\" option below.\r\n\r\nThe \"Custom Content\" option can be used sparingly to add custom CTAs or one-off content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5a661bdaea1f1": {
+                    "key": "5a661bdaea1f1",
+                    "name": "feature_post",
+                    "label": "Feature Post",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a661bedb098e",
+                            "label": "Feature Post",
+                            "name": "feature_post",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "carnage_feature"
+                            ],
+                            "taxonomy": [],
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a661c3ab098f": {
+                    "key": "5a661c3ab098f",
+                    "name": "custom_content",
+                    "label": "Custom Content",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a6a1ec44cd52",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_5a6a1ecd4cd53",
+                            "label": "Label",
+                            "name": "label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a6627fd1bb5b",
+                                        "operator": "!=",
+                                        "value": "callout"
+                                    },
+                                    {
+                                        "field": "field_5a6627fd1bb5b",
+                                        "operator": "!=",
+                                        "value": "white-callout"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Editor's Note",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a6627fd1bb5b",
+                            "label": "Style",
+                            "name": "style",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "white": "White (boxed)",
+                                "dark": "Dark (boxed)",
+                                "callout": "Black Callout (boxed, centered)",
+                                "white-callout": "White Callout (boxed, centered)",
+                                "gray": "Gray (not boxed)"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5a661c47b0990",
+                            "label": "Custom Content",
+                            "name": "custom_content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5a6a1f272aafa",
+                            "label": "CTA Links",
+                            "name": "cta_links",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Add Link",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a7237bdaf8f8",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e6be84a57a97": {
+                    "key": "layout_5e6be84a57a97",
+                    "name": "poll",
+                    "label": "Poll",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e6bed8d1d404",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_5e6be84a57a99",
+                            "label": "Label",
+                            "name": "label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5a661b3eb098b",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Poll",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e6bedbe1d405",
+                            "label": "Custom Content",
+                            "name": "custom_content",
+                            "type": "wysiwyg",
+                            "instructions": "Overrides default poll title display.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5e6be8e657a9e",
+                            "label": "Poll",
+                            "name": "poll",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "poll"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_605e3f230be66": {
+                    "key": "layout_605e3f230be66",
+                    "name": "share_cta",
+                    "label": "Share CTA",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Feature",
+            "min": "",
+            "max": ""
+        },
+        {
+            "key": "field_5cad0b4a77201",
+            "label": "Include footer callout?",
+            "name": "include_footer_callout",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Include footer callout",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c91490fda797",
+            "label": "Footer Callout",
+            "name": "footer",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cad0b4a77201",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5a6a1ec44cd52",
+                "field_5a661c47b0990",
+                "field_5a6a1f272aafa"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "carnage_issue"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616794383
+}

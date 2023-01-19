@@ -1,0 +1,32 @@
+<svg id="svg-content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 199.92 222.76">
+  <defs>
+    <style>
+      .svg-content-cls-3,.svg-content-cls-6{stroke:#fff}.svg-content-cls-2,.svg-content-cls-3,.svg-content-cls-6{fill:#262626}.svg-content-cls-5{fill:#fff}.svg-content-cls-6{stroke-width:3px}
+    </style>
+  </defs>
+  <path id="svg-content_border" d="M27.4 222.76V22.28h161v146" style="isolation:isolate" stroke="#fff" fill="#272727" stroke-width="5" opacity=".2"/>
+  <g id="svg-content_video-block">
+    <path class="svg-content-cls-3" d="M138.59 112.4h60.82v43.73h-60.82z"/>
+    <circle cx="169.98" cy="134.53" r="11.11" stroke-width="2" fill="#262626" stroke="#fff"/>
+    <path class="svg-content-cls-5" d="M173.7 134.47l-4.91-3v6.07z"/>
+  </g>
+  <g id="svg-content_image-block">
+    <path class="svg-content-cls-3" d="M13.34.5h161.35v75.74H13.34z"/>
+    <path class="svg-content-cls-3" d="M66.86 50.48l10.35-14.63 9.26 8.9 14.8-18.55 19.87 24.28z"/>
+    <path class="svg-content-cls-2" d="M71 20a5.5 5.5 0 1 1-5.5 5.5A5.5 5.5 0 0 1 71 20z"/>
+    <path class="svg-content-cls-5" d="M71 20.62a4.84 4.84 0 1 0 4.84 4.84A4.84 4.84 0 0 0 71 20.62m0-.62a5.5 5.5 0 1 1-5.5 5.5A5.5 5.5 0 0 1 71 20z"/>
+  </g>
+  <g id="svg-content_text-block">
+    <path class="svg-content-cls-3" d="M.5 101.28h99.12v100.61H.5z" id="svg-content_text-block_border"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="117.76" x2="83.89" y2="117.76"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="124.72" x2="76.09" y2="124.72"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="131.68" x2="83.89" y2="131.68"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="138.64" x2="76.09" y2="138.64"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="145.61" x2="55.11" y2="145.61"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="159.53" x2="83.89" y2="159.53"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="166.49" x2="76.09" y2="166.49"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="173.45" x2="83.89" y2="173.45"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="180.41" x2="76.09" y2="180.41"/>
+    <line class="svg-content-cls-6" x1="15.61" y1="187.37" x2="55.11" y2="187.37"/>
+  </g>
+</svg>

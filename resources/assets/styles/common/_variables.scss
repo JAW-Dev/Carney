@@ -1,0 +1,163 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+// Defaults
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+$btn-font-weight: 600;
+$btn-border-width: 0;
+$btn-transition: all 0.5s;
+
+$btn-padding-x: 2rem;
+$btn-padding-y: 0.5rem;
+
+$btn-padding-x-lg: 2.667rem;
+$btn-padding-y-lg: 0.667rem;
+
+$grid-gutter-width: 2rem;
+$grid-padding: ($grid-gutter-width / 2);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25
+  ),
+  2: (
+    $spacer * 0.5
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 2
+  ),
+  5: (
+    $spacer * 3
+  ),
+  sm: (
+    $spacer * 4
+  ),
+  md: (
+    $spacer * 6
+  ),
+  lg: (
+    $spacer * 8
+  ),
+  xl: (
+    $spacer * 10
+  ),
+  xxl: (
+    $spacer * 15
+  )
+);
+
+$progress-bg: #ccc;
+$progress-height: 1.5rem;
+$progress-border-radius: 0.25rem;
+
+// Colors
+$body-bg: #272727;
+$body-color: #fff;
+
+$blue-dark: #464bce;
+$blue-light: #39d2fd;
+
+$orange-dark: #ff8a64;
+$orange-light: #ffb064;
+
+$pink-dark: #ff6496;
+
+$red-light: #c11742;
+$red-dark: #881834;
+
+$green-light: #589279;
+$green-dark: #345647;
+
+$green-light-alt: #7bc725;
+$green-dark-alt: #6ca125;
+
+$pumpkin-light: #ff591b;
+$pumpkin-dark: #ff591b;
+
+$purple-light: #6b298e;
+$purple-lighter: lighten($purple-light, 10%);
+$purple-dark: #350f49;
+
+$aqua-blue: #6bd8e2;
+$aqua-green: #6addb6;
+
+$gold-light: #ffe284;
+$gold-dark: #f2ac3b;
+
+// - MissFits colors
+$mint: #65e0c8;
+$mustard: #fecb5f;
+$coral: #f47e5c;
+$beige: #f8f6f4;
+
+$carney-colors: (
+  "blue-dark": $blue-dark,
+  "blue-light": $blue-light,
+  "orange-dark": $orange-dark,
+  "orange-light": $orange-light,
+  "pink-dark": $pink-dark,
+  "red-light": $red-light,
+  "red-dark": $red-dark,
+  "green-light": $green-light,
+  "green-dark": $green-dark,
+  "green-light-alt": $green-light-alt,
+  "pumpkin-light": $pumpkin-light,
+  "pumpkin-dark": $pumpkin-dark,
+  "purple-light": $purple-light,
+  "purple-lighter": $purple-lighter,
+  "purple-dark": $purple-dark,
+  "aqua-blue": $aqua-blue,
+  "aqua-green": $aqua-green,
+  "gold-light": $gold-light,
+  "gold-dark": $gold-dark
+);
+
+$primary: $orange-dark;
+$primary-gradient-end: $orange-light;
+$secondary: $blue-dark;
+$secondary-gradient-end: $blue-light;
+$info: $blue-light;
+$warning: $orange-light;
+
+$table-dark-bg: $body-bg;
+$table-dark-border-color: lighten($body-bg, 7.5%);
+$table-dark-color: #fff;
+
+// Fonts
+$montserrat: "Montserrat", sans-serif;
+$source-serif: "Source Serif Pro", serif;
+
+$font-family-sans-serif: $montserrat;
+$font-family-serif: $source-serif;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 700;
+
+// - MissFits fonts
+$garamond: adobe-garamond-pro, sans-serif;
+$source-sans: source-sans-pro, serif;
+
+// Typography
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 6;
+$h2-font-size: $font-size-base * 5;
+$h3-font-size: $font-size-base * 4;
+$h4-font-size: $font-size-base * 3;
+$h5-font-size: $font-size-base * 2;
+$h6-font-size: $font-size-base;
+
+$display1-size: $font-size-base * 6;
+$display2-size: $font-size-base * 5;
+$display3-size: $font-size-base * 4;
+$display4-size: $font-size-base * 3;
+
+// Blocks
+$content-max-height: 1000px;
+$hero-max-height: $content-max-height;
+$preview-max-height: 100vh;

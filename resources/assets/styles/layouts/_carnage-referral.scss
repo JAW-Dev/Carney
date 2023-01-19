@@ -1,0 +1,297 @@
+body.carnage-referral,
+body.carnage-referral-legacy {
+  color: $body-bg;
+  background-color: $body-color;
+
+  #app-content {
+    background-color: transparent;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  input#referral-code {
+    user-select: text;
+  }
+
+  .referral-share {
+    @extend .page-footer__social-list;
+
+    align-items: flex-end;
+
+    svg {
+      height: 2rem;
+    }
+  }
+
+  h6,
+  .h6 {
+    font-size: 1.5 * $font-size-base;
+  }
+
+  .referral-rewards {
+    p.h3 {
+      color: $pink-dark;
+
+      small {
+        color: $body-bg;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+  }
+
+  .copy-label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+
+    &.copied {
+      color: $orange-dark;
+    }
+  }
+
+  .copy-label-alert {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+
+    .sr-only {
+      display: none;
+      width: auto;
+      height: auto;
+    }
+
+    &::after {
+      content: "";
+      margin-left: $grid-padding;
+      font-weight: normal;
+      opacity: 0;
+      transition: all 0.2s ease;
+      position: absolute;
+      bottom: -3rem;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  .copied .copy-label-alert {
+    font-weight: 600;
+
+    .sr-only {
+      display: inline;
+    }
+
+    &::after {
+      content: "Copied!";
+      bottom: 0;
+      opacity: 1;
+      z-index: 1;
+
+      @include media-breakpoint-up(lg) {
+        content: "Link copied!";
+      }
+    }
+  }
+
+  .sign-up-form {
+    border-color: #efefef;
+
+    .sign-up-form__input {
+      color: $body-bg;
+
+      &::placeholder {
+        color: $body-bg !important;
+      }
+    }
+
+    .sign-up-form__button {
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .spinner {
+      position: absolute;
+      left: 50%;
+      margin-left: -8;
+      bottom: -36px;
+      opacity: 0;
+      transition: opacity 0.25s;
+
+      @include media-breakpoint-up(sm) {
+        top: 50%;
+        right: -36px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        margin-top: -8px;
+      }
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .sign-up-form__status {
+    margin-top: $grid-padding;
+
+    &.sign-up-form__status--success {
+      color: $success;
+    }
+
+    &.sign-up-form__status--error {
+      color: $danger;
+    }
+  }
+
+  .wp-block-carney-posts__list {
+    & > li {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-right: -$grid-padding;
+      margin-left: -$grid-padding;
+
+      & > li {
+        width: 33.333%;
+        padding-left: $grid-padding;
+        padding-right: $grid-padding;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -$grid-gutter-width;
+      margin-left: -$grid-gutter-width;
+
+      & > li {
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+      }
+    }
+  }
+}
+
+.referral-rewards__reward {
+  position: relative;
+
+  svg {
+    display: none;
+  }
+
+  &.is-active {
+    & > * {
+      opacity: 0.2;
+    }
+
+    svg {
+      display: block;
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4rem;
+      color: $primary;
+      opacity: 1;
+    }
+  }
+}
+
+.referral-admin {
+  th {
+    &.number-header,
+    &.rank-header {
+      width: 65px;
+      text-align: center;
+    }
+
+    &.count-header {
+      width: 80px;
+    }
+
+    &.links-header {
+      width: 80px;
+    }
+
+    &.registered-header {
+      width: 150px;
+    }
+  }
+
+  tbody {
+    tr {
+      .btn {
+        opacity: 0;
+      }
+
+      &:hover {
+        .btn {
+          opacity: 1;
+        }
+      }
+    }
+
+    td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &.number-cell,
+      &.rank-cell {
+        text-align: center;
+      }
+    }
+  }
+
+  tfoot {
+    li.list-inline-item:not(:last-child) {
+      margin-right: 0.2rem;
+    }
+
+    .pagination__prev {
+      margin-left: -0.5rem;
+    }
+
+    .pagination__next {
+      margin-right: -0.5rem;
+    }
+  }
+}
+
+.referred-user {
+  font-size: 0.8rem;
+  display: inline-block;
+  padding: 0.1em 0.75em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.75em;
+  font-weight: 600;
+  color: inherit;
+
+  .referred-user__count {
+    display: inline-block;
+    position: relative;
+    margin-top: -0.1em;
+    margin-bottom: -0.1em;
+    right: -0.75em;
+    padding: 0.1em 0.75em;
+    border-radius: 0 0.75em 0.75em 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #fff;
+  }
+}
+
+a.referred-user {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: $primary;
+  }
+}

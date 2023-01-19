@@ -1,0 +1,21 @@
+.page-preview {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.page-preview__link {
+  margin-bottom: 2em;
+
+  @include media-breakpoint-up(md) {
+    &:not(:only-child) {
+      flex-basis: 48%;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .modal-lg {
+    max-width: map-get($container-max-widths, "xl");
+  }
+}

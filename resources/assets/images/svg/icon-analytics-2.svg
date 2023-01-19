@@ -1,0 +1,78 @@
+<svg id="svg-analytics" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308.69 378.38">
+  <defs>
+    <style>
+      .svg-analytics-cls-1, .svg-analytics-cls-2, .svg-analytics-cls-3, .svg-analytics-cls-4, .svg-analytics-cls-6, .svg-analytics-cls-7 {
+        fill: none;
+      }
+
+      .svg-analytics-cls-2, .svg-analytics-cls-3, .svg-analytics-cls-6 {
+        stroke: #fff;
+      }
+
+      .svg-analytics-cls-3 {
+        stroke-width: 2px;
+      }
+
+      .svg-analytics-cls-4 {
+        stroke: #fff;
+      }
+
+      .svg-analytics-cls-7 {
+        stroke: #fff;
+      }
+
+      .svg-analytics-cls-5 {
+        fill: #fff;
+      }
+
+      .svg-analytics-cls-6 {
+        stroke-width: 20px;
+      }
+
+      .svg-analytics-cls-7 {
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <title>Analytics</title>
+  <g id="svg-analytics_line-chart-block">
+    <g id="svg-analytics_line-chart-border">
+      <rect class="svg-analytics-cls-2" x="10.27" y="10.27" width="289.21" height="139.97"/>
+    </g>
+    <g id="svg-analytics_line-chart">
+      <path id="svg-analytics_line-chart_line" class="svg-analytics-cls-3" d="M46.57,146.62l30.76-30.31L93.23,132l39-38.4,23.08,22.74,52.67-51.89,29.59,29.16,47.11-46.42" transform="translate(-34.8 0.05)"/>
+      <g id="svg-analytics_line-chart_circle-1">
+        <circle class="svg-analytics-cls-1" cx="120.95" cy="114.91" r="13.55"/>
+        <circle class="svg-analytics-cls-3" cx="120.95" cy="114.91" r="12.55"/>
+      </g>
+      <g id="svg-analytics_line-chart_circle-2">
+        <circle class="svg-analytics-cls-1" cx="248.95" cy="47.91" r="13.55"/>
+        <circle class="svg-analytics-cls-3" cx="248.95" cy="47.91" r="12.55"/>
+      </g>
+    </g>
+  </g>
+  <g id="svg-analytics_pie-chart-block">
+    <g id="svg-analytics_pie-chart-border">
+      <rect class="svg-analytics-cls-4" x="192.27" y="155.27" width="107" height="82"/>
+    </g>
+    <g id="svg-analytics_pie-chart_chart">
+      <circle r="22" cx="248" cy="196" fill="#262626" style="
+    stroke: #fff;
+    stroke-width: 2px;"></circle>
+      <circle r="11" cx="248" cy="196" class="pie" fill="#262626"></circle>
+    </g>
+  </g>
+  <g id="svg-analytics_bar-chart-block">
+    <g id="svg-analytics_bar-chart-border">
+      <rect class="svg-analytics-cls-4" x="10.27" y="155.27" width="177" height="187"/>
+    </g>
+    <g id="svg-analytics_bar-chart">
+      <line class="svg-analytics-cls-6" x1="154.88" y1="310.7" x2="154.88" y2="187.2"/>
+      <line class="svg-analytics-cls-6" x1="126.63" y1="310.7" x2="126.63" y2="214.58"/>
+      <line class="svg-analytics-cls-6" x1="98.38" y1="310.7" x2="98.38" y2="202.17"/>
+      <line class="svg-analytics-cls-6" x1="70.13" y1="310.7" x2="70.13" y2="214.58"/>
+      <line class="svg-analytics-cls-6" x1="41.88" y1="310.7" x2="41.88" y2="247.91"/>
+    </g>
+  </g>
+  <path id="svg-analytics_page-border" class="svg-analytics-cls-7" d="M38.8,378.34V4H339.49V276.61" transform="translate(-34.8 0.05)"/>
+</svg>

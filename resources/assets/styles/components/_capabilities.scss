@@ -1,0 +1,219 @@
+body.capabilities,
+body.page.art-van,
+body.page.argosy {
+  .wp-block-carney-section.capabilities-header {
+    z-index: 2;
+  }
+
+  .wp-block-carney-hero--fixed {
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      z-index: 1;
+    }
+  }
+
+  .capabilities-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(39, 39, 39, 1) 75%,
+      rgba(39, 39, 39, 0.85) 85%,
+      rgba(39, 39, 39, 0) 100%
+    );
+    z-index: 2;
+    opacity: 0;
+
+    @include media-breakpoint-up(lg) {
+      top: 30vh;
+      left: 15vw;
+      width: 200px;
+      background-color: transparent;
+    }
+
+    svg {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      opacity: 0;
+      max-width: 36%;
+      overflow: visible;
+
+      @include media-breakpoint-up(lg) {
+        top: 0;
+        left: 0;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .wp-block-carney-capability-preview {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    min-height: 100vh;
+    transition: height 10000s steps(1);
+
+    .wp-block-carney-capability-preview__title {
+      &.h3 {
+        font-size: 3rem;
+      }
+
+      & > small {
+        font-size: 0.8rem;
+        font-weight: 300;
+        font-style: italic;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      transition: none;
+      .wp-block-carney-capability-preview__title {
+        &.h3 {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  .wp-block-carney-capability-preview__content {
+    align-self: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include media-breakpoint-up(lg) {
+      width: 75%;
+      padding: 0 0 8rem 18rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 50%;
+      padding: 0 3rem 8rem 11rem;
+    }
+
+    & > .lead {
+      @include media-breakpoint-up(lg) {
+        padding-left: 4rem;
+      }
+    }
+
+    & > ul.lead {
+      @include media-breakpoint-up(lg) {
+        padding-left: 5.5rem;
+      }
+    }
+  }
+
+  .wp-block-carney-capability-preview__examples {
+    display: block;
+    margin-bottom: 0.75em;
+    font-size: 1em;
+    font-style: italic;
+    color: darken($body-color, 40%);
+  }
+}
+
+.capabilities-container {
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 65%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+#strategy,
+#content,
+#design,
+#development,
+#marketing,
+#analytics,
+#audience,
+#style,
+#frequency,
+#distribution {
+  padding: 50px 0;
+}
+
+#strategy {
+  padding-top: 200px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 50px;
+  }
+}
+
+body:not(.art-van):not(.argosy) {
+  #analytics {
+    padding: 50px 0 0 0;
+
+    @include media-breakpoint-up(lg) {
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .wp-block-carney-capability-preview__content {
+      padding-bottom: 10rem;
+    }
+  }
+}
+
+body.page.art-van,
+body.page.argosy {
+  main {
+    font-family: "Avenir", sans-serif;
+
+    h2,
+    .h2,
+    h3,
+    .h3 h4,
+    .h4 {
+      font-family: "Avenir", sans-serif;
+    }
+  }
+
+  #analytics {
+    .wp-block-carney-capability-preview__content {
+      padding-bottom: 20rem;
+    }
+  }
+}
+
+.svg-component {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+
+.dotted {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 546;
+}
+
+.mask1,
+.mask2 {
+  stroke-dasharray: 705;
+  stroke-dashoffset: 705;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+  stroke-dasharray: 125;
+  stroke-dashoffset: 125;
+}
+
+.outline {
+  stroke-dasharray: 550;
+  stroke-dashoffset: 550;
+}

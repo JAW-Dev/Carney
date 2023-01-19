@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/ave-light.eot");
+  src: url("../fonts/ave-light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ave-light.woff") format("woff"),
+    url("../fonts/ave-light.ttf") format("truetype"),
+    url("../fonts/ave-light.svg#centralesansbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/ave-black.eot");
+  src: url("../fonts/ave-black.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ave-black.woff") format("woff"),
+    url("../fonts/ave-black.ttf") format("truetype"),
+    url("../fonts/ave-black.svg#centralesansbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}

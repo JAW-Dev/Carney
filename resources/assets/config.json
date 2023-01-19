@@ -1,0 +1,15 @@
+{
+  "entry": {
+    "admin": ["./scripts/admin.js", "./styles/admin.scss"],
+    "main": ["./scripts/main.js", "./styles/main.scss"],
+    "job-openings": ["./scripts/blocks/job-openings.js"],
+    "carnage-referral": ["./scripts/carnage-referral.js", "./styles/main.scss"],
+    "customizer": ["./scripts/customizer.js"]
+  },
+  "publicPath": "/wp-content/themes/carney-2018",
+  "devUrl": "http://carney.local",
+  "proxyUrl": "http://carney.local:3000",
+  "cacheBusting": "[name]_[hash:8]",
+  "watch": ["app/**/*.php", "config/**/*.php", "resources/views/**/*.php"],
+  "copy": "+(images|videos|static|files)/**/*"
+}

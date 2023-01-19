@@ -1,0 +1,37 @@
+@import "common/variables";
+
+/** Import everything from autoload */
+@import "./autoload/**/*";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import "~image-comparison/src/ImageComparison.css";
+@import "~select2/src/scss/core";
+
+/** Import theme styles */
+@import "common/mixins";
+@import "common/global";
+@import "common/fonts";
+@import "components/buttons";
+@import "components/blocks";
+@import "components/capabilities";
+@import "components/forms";
+@import "components/wp-classes";
+@import "components/page-preview";
+@import "components/testimonial";
+@import "components/phone";
+@import "components/poll";
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";
+@import "layouts/carnage-referral";
+
+/** Gutenberg editor styles **/
+@import "common/gutenberg";
