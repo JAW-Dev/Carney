@@ -63,9 +63,8 @@
     "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
     "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
     "test": "npm run -s lint",
-    "deploy:staging-new": "rsync -azvh --progress --exclude '.git' --exclude 'node_modules' --exclude 'assets' . carney:applications/carney_staging/public_html/wp-content/themes/carney-2018 --delete-after",
-    "deploy:staging": "rsync -azvh --progress --exclude '.env' --exclude '.git' --exclude 'node_modules' --exclude 'assets' --exclude '.cache-loader' . deploy@biggie:/var/www/vhosts/carney-staging/site/wp-content/themes/carney-2018 --delete-after",
-    "deploy:production": "rsync -azvh --progress --exclude '.env' --exclude '.git' --exclude 'node_modules' --exclude 'assets' --exclude '.cache-loader' . deploy@biggie:/var/www/vhosts/carney-beta/site/wp-content/themes/carney-2018 --delete-after"
+    "deploy:staging": "rsync -azvh --progress --exclude '.git' --exclude 'node_modules' --exclude 'assets' . carney:applications/carney_staging/public_html/wp-content/themes/carney-2018 --delete-after",
+    "deploy:production": "rsync -azvh --progress --exclude '.git' --exclude 'node_modules' --exclude 'assets' . carney:applications/carney_beta/public_html/wp-content/themes/carney-2018 --delete-after"
   },
   "engines": {
     "node": ">= 6.9.4"
