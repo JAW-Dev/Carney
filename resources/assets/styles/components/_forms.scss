@@ -79,7 +79,7 @@
 .sign-up-form {
   display: flex;
   padding: 0.25rem;
-  border: 2px solid #fff;
+  // border: 2px solid #fff;
   width: 25rem;
   max-width: 100%;
   position: relative;
@@ -199,7 +199,7 @@
 }
 
 .sign-up-form__input {
-  border: 0;
+  border: 2px solid #fff !important;
   background-color: transparent;
   width: auto;
   min-width: 0;
@@ -208,6 +208,7 @@
   padding: 0.25em 0.5em;
   color: #fff;
   max-width: 100%;
+  min-height: 3.0625rem !important;
 
   &::placeholder {
     color: #fff;
